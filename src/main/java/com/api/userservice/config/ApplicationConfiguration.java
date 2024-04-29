@@ -41,7 +41,10 @@ public class ApplicationConfiguration {
       @Override
       public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
         CorsConfiguration cfg = new CorsConfiguration();
-        cfg.setAllowedOrigins(Collections.singletonList("*"));
+        cfg.setAllowedOrigins(Arrays.asList(
+          "https://localhost:5002", // task-service url
+          "http://localhost:5000" //  frantend project url 
+        ));
         cfg.setAllowedMethods(Collections.singletonList("*"));
         cfg.setAllowCredentials(true);
         cfg.setAllowedHeaders(Collections.singletonList("*"));
